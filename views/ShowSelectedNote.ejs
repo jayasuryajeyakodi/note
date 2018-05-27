@@ -1,0 +1,19 @@
+<% include partials/header.ejs %>
+    <div class="container">
+
+        <form class="form-group" action="/note/<%= Note._id %>?_method=PUT" method="POST">
+            <label for="">Title</label>
+            <input class = "form-control" type="text" name="Note[Title]" value="<%= Note.Title %>">
+            <label for="">Content</label>
+            <textarea class = "form-control" name="Note[Content]" id="" cols="30" rows="10">
+                <%= Note.Content %>
+            </textarea>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        <form class="form-group inline-form" action="/note/<%= Note._id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+
+
+    <% include partials/footer.ejs %>
